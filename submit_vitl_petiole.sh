@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=4
 #SBATCH --cpus-per-task=128
-#SBATCH --time=05:00:00
+#SBATCH --time=12:00:00
 #SBATCH -o output/dinov3_vitl_petiole.out
 #SBATCH --mail-type=begin,end,fail
 #SBATCH --mail-user=xchong@lbl.gov

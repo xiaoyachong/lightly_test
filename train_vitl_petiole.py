@@ -43,4 +43,5 @@ if __name__ == "__main__":
             "save_last": True,                     # Save last checkpoint
             "save_best": True,                     # Save best checkpoint
         },
+        resume_interrupted=True,
     )
