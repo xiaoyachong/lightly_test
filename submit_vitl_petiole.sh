@@ -1,14 +1,15 @@
 #!/bin/bash
-#SBATCH -C gpu
-#SBATCH -A m4880_g
 #SBATCH -q regular
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=4
-#SBATCH --cpus-per-task=128
-#SBATCH --time=12:00:00
-#SBATCH -o output/dinov3_vitl_petiole.out
-#SBATCH --mail-type=begin,end,fail
-#SBATCH --mail-user=xchong@lbl.gov
+#SBATCH -A amsc006
+#SBATCH --reservation=_CAP_SYNAPYIDINOSAM
+#SBATCH -N 1                          # 4 nodes = 16 GPUs total
+#SBATCH -C gpu&hbm80g
+#SBATCH --time=06:00:00               # Reduce to 1 hour (500 images takes ~10 min)
+#SBATCH --ntasks-per-node=1           
+#SBATCH --gpus-per-node=4             
+#SBATCH --cpus-per-task=128           
+#SBATCH --output=logs/job_%j.out      # %j = job ID
+#SBATCH --error=logs/job_%j.err
 
 module load python
 source /global/common/software/nersc/pe/conda/24.10.0/Miniforge3-24.7.1-0/bin/activate /pscratch/sd/x/xchong/envs/lightly

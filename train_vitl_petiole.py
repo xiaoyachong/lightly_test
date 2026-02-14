@@ -6,18 +6,18 @@ import lightly_train
 
 if __name__ == "__main__":
     lightly_train.train_semantic_segmentation(
-        out="out_slurm_vitl16/my_experiment_petiole",
+        out="out_slurm_vitl16/my_experiment_petiole_33tiff",
         model="dinov3/vitl16-eomt",
         steps=5000,  # Total training steps
         devices=4,
         data={
             "train": {
-                "images": "4folders_png/train/images",   # Path to training images
-                "masks": "4folders_png/train/masks",     # Path to training masks
+                "images": "33folders_png/train/images",   # Path to training images
+                "masks": "33folders_png/train/masks",     # Path to training masks
             },
             "val": {
-                "images": "4folders_png/val/images",     # Path to validation images
-                "masks": "4folders_png/val/masks",       # Path to validation masks
+                "images": "33folders_png/val/images",     # Path to validation images
+                "masks": "33folders_png/val/masks",       # Path to validation masks
             },
             "classes": {                                # Classes in the dataset 
                 0: "background",
@@ -39,9 +39,9 @@ if __name__ == "__main__":
             "val_log_every_num_steps": 100,         # Log all validation steps
         },
         save_checkpoint_args={
-            "save_every_num_steps": 100,          # Save checkpoint every 200 steps
+            "save_every_num_steps": 1000,          # Save checkpoint every 200 steps
             "save_last": True,                     # Save last checkpoint
             "save_best": True,                     # Save best checkpoint
         },
-        resume_interrupted=True,
+        #resume_interrupted=True,
     )
