@@ -6,18 +6,18 @@ import lightly_train
 
 if __name__ == "__main__":
     lightly_train.train_semantic_segmentation(
-        out="out_slurm_vitl16/my_experiment_petiole_33tiff",
+        out="out_slurm_vitl16/my_experiment_petiole_42tiff",
         model="dinov3/vitl16-eomt",
         steps=5000,  # Total training steps
         devices=4,
         data={
             "train": {
-                "images": "33folders_png/train/images",   # Path to training images
-                "masks": "33folders_png/train/masks",     # Path to training masks
+                "images": "42folders_png/train/images",   # Path to training images
+                "masks": "42folders_png/train/masks",     # Path to training masks
             },
             "val": {
-                "images": "33folders_png/val/images",     # Path to validation images
-                "masks": "33folders_png/val/masks",       # Path to validation masks
+                "images": "42folders_png/val/images",     # Path to validation images
+                "masks": "42folders_png/val/masks",       # Path to validation masks
             },
             "classes": {                                # Classes in the dataset 
                 0: "background",

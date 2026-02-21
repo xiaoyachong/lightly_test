@@ -214,3 +214,7 @@ sand_data*/
 petioles_data_seg_png/
 33folders_png/
 logs/
+42folders_png/
+42tiff/
+dino/
+get_instance_mask.ipynb
